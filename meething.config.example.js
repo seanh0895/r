@@ -4,7 +4,7 @@ module.exports = {
     script: 'src/app.js',
     watch: './src',
     env : {
-      PORT: 3443,
+      PORT: 443,
       SSL : true,
       SSLKEY : 'certs/privkey.pem',
       SSLCERT  : 'certs/fullchain.pem',
