@@ -30,8 +30,8 @@ app.get('/:room', function(req, res) {
 
 if (!process.env.SSL) {
 	config.webserver = http.createServer({}, app);
-	config.webserver.listen(config.port, () => console.log(`Meething HTTP app listening on port ${config.port}!`))
+	config.webserver.listen(config.port, () => console.log(`HTTP app listening on port ${config.port}!`))
 } else {
 	config.webserver = https.createServer(config.options, app);
-	config.webserver.listen(config.port, () => console.log(`Meething HTTPS app listening on port ${config.port}!`))
+	config.webserver.listen(config.port, () => console.log(`HTTPS app listening on port ${config.port}!`))
 }
