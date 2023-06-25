@@ -14,7 +14,7 @@ export default class Toggles {
     this.initToggleAudio();
     this.initToggleScreenShare();
     this.initToggleAudioRecording();
-    this.initTogglePiPMode();
+   // this.initTogglePiPMode();
     this.initToggleSpacebar();
     //this.initToggleMesh();
   }
@@ -133,27 +133,27 @@ export default class Toggles {
     });
   }
 
-  initTogglePiPMode() {
-    const togglePip = document.getElementById("pip-toggle");
-    const pipVideo = document.getElementById("pip");
-    if ("pictureInPictureEnabled" in document) {
-      togglePip.hidden = false;
-      togglePip.addEventListener("click", e => {
-        e.preventDefault();
-        window.ee.emit("pip-toggled")
-      });
+  // initTogglePiPMode() {
+  //   const togglePip = document.getElementById("pip-toggle");
+  //   const pipVideo = document.getElementById("pip");
+  //   if ("pictureInPictureEnabled" in document) {
+  //     togglePip.hidden = false;
+  //     togglePip.addEventListener("click", e => {
+  //       e.preventDefault();
+  //       window.ee.emit("pip-toggled")
+  //     });
 
-      pipVideo.addEventListener('enterpictureinpicture', function (event) {
-        togglePip.classList.add("text-success");
-        togglePip.classList.remove("text-white");
-      });
+  //     pipVideo.addEventListener('enterpictureinpicture', function (event) {
+  //       togglePip.classList.add("text-success");
+  //       togglePip.classList.remove("text-white");
+  //     });
 
-      pipVideo.addEventListener('leavepictureinpicture', function (event) {
-        togglePip.classList.add("text-white");
-        togglePip.classList.remove("text-success");
-      });
-    }
-  }
+  //     pipVideo.addEventListener('leavepictureinpicture', function (event) {
+  //       togglePip.classList.add("text-white");
+  //       togglePip.classList.remove("text-success");
+  //     });
+  //   }
+  // }
 
   // initToggleMesh() {
   //   const mesh = med.h.getQString(location.href, "mesh") || "false";
