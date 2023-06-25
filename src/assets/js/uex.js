@@ -261,13 +261,13 @@ export default class UEX {
 
     // options: password on / off
 
-    document.querySelector('#password').addEventListener( 'change', function(ev) {
-      if(this.checked) {
-          document.querySelector('#pass').removeAttribute("hidden");
-      } else {
-          document.querySelector('#pass').setAttribute("hidden", "");
-      }
-    });
+    // document.querySelector('#password').addEventListener( 'change', function(ev) {
+    //   if(this.checked) {
+    //       document.querySelector('#pass').removeAttribute("hidden");
+    //   } else {
+    //       document.querySelector('#pass').setAttribute("hidden", "");
+    //   }
+    // });
 
     // options: clear button
 
@@ -284,10 +284,10 @@ export default class UEX {
 
     // options: slide out options
 
-    document.querySelector('#options-button').addEventListener('click', function(ev) {
-      var opt = document.querySelector('#options');
-      opt.classList.toggle('out')
-    });
+    // document.querySelector('#options-button').addEventListener('click', function(ev) {
+    //   var opt = document.querySelector('#options');
+    //   opt.classList.toggle('out')
+    // });
 
 
     // options: go button pushed
@@ -302,16 +302,16 @@ export default class UEX {
       window.history.pushState(null,'',`?room=${med.room}&mesh=${med.mesh}`);
 
       // if password option is on
-      let _pass = document.querySelector('#pass');
+      // let _pass = document.querySelector('#pass');
 
-      if(document.querySelector('#password').checked && _pass.value !== "") {
-        var pval = _pass && _pass.value ? _pass.value : false;
-        if(pval) await med.storePass(pval);
-      } else if (document.querySelector('#password').checked){
-        // get password, if empty alert that it is empty
-        alert('Password must be filled in')
-        return;
-      }
+      // if(document.querySelector('#password').checked && _pass.value !== "") {
+      //   var pval = _pass && _pass.value ? _pass.value : false;
+      //   if(pval) await med.storePass(pval);
+      // } else if (document.querySelector('#password').checked){
+      //   // get password, if empty alert that it is empty
+      //   alert('Password must be filled in')
+      //   return;
+      // }
       // otherwise ignore
       // hide the options
       if(document.querySelector('#inputs')){document.querySelector('#inputs').setAttribute("hidden","");}
@@ -338,36 +338,36 @@ export default class UEX {
 
     self.optShown = false;
 
-    document.querySelector('#toggle-modal').addEventListener('click', function(ev){
-      // TODO: disable Mesh selection in options?
-      if(!self.optShown) {
-        if(document.querySelector('#selfview')){document.querySelector('#selfview').removeAttribute("hidden");}
-        if(document.querySelector('#options')){document.querySelector('#options').removeAttribute("hidden");}
-        self.optShown = true;
-        var ve = document.getElementById('local');
-        med.localVideo = ve;
-        var el = document.getElementById('selfview');
-        document.querySelector("#top-menu").style.display = 'none'
-        document.querySelector("#toggle-ok-option").style.display = "inline-block"
-        if(ve && el){
-          ve.className="";
-          el.appendChild(ve);
-        }
-      } else {
-        if(document.querySelector('#selfview')){document.querySelector('#selfview').setAttribute("hidden","");}
-        if(document.querySelector('#options')){document.querySelector('#options').setAttribute("hidden","");}
-        var ve = document.getElementById('local');
-        document.querySelector("#toggle-ok-option").style.display = 'none';
-        med.localVideo = ve;
-        var vs = document.getElementById('localStream');
-        if(ve && vs){
-          ve.className="local-video clipped";
-          vs.appendChild(ve);
-          med.ee.emit("local-video-loaded");
-        }
-        self.optShown = false;
-      }
-    });
+    // document.querySelector('#toggle-modal').addEventListener('click', function(ev){
+    //   // TODO: disable Mesh selection in options?
+    //   if(!self.optShown) {
+    //     if(document.querySelector('#selfview')){document.querySelector('#selfview').removeAttribute("hidden");}
+    //     if(document.querySelector('#options')){document.querySelector('#options').removeAttribute("hidden");}
+    //     self.optShown = true;
+    //     var ve = document.getElementById('local');
+    //     med.localVideo = ve;
+    //     var el = document.getElementById('selfview');
+    //     document.querySelector("#top-menu").style.display = 'none'
+    //     document.querySelector("#toggle-ok-option").style.display = "inline-block"
+    //     if(ve && el){
+    //       ve.className="";
+    //       el.appendChild(ve);
+    //     }
+    //   } else {
+    //     if(document.querySelector('#selfview')){document.querySelector('#selfview').setAttribute("hidden","");}
+    //     if(document.querySelector('#options')){document.querySelector('#options').setAttribute("hidden","");}
+    //     var ve = document.getElementById('local');
+    //     document.querySelector("#toggle-ok-option").style.display = 'none';
+    //     med.localVideo = ve;
+    //     var vs = document.getElementById('localStream');
+    //     if(ve && vs){
+    //       ve.className="local-video clipped";
+    //       vs.appendChild(ve);
+    //       med.ee.emit("local-video-loaded");
+    //     }
+    //     self.optShown = false;
+    //   }
+    // });
     document.querySelector("#toggle-ok-option").addEventListener("click",function(){
       document.querySelector("#toggle-ok-option").style.display = 'none';
      if(document.querySelector('#selfview')){document.querySelector('#selfview').setAttribute("hidden","");}

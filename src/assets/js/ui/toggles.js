@@ -16,7 +16,7 @@ export default class Toggles {
     this.initToggleAudioRecording();
     this.initTogglePiPMode();
     this.initToggleSpacebar();
-    this.initToggleMesh();
+    //this.initToggleMesh();
   }
 
   initToggleVideo() {
@@ -155,17 +155,17 @@ export default class Toggles {
     }
   }
 
-  initToggleMesh() {
-    const mesh = med.h.getQString(location.href, "mesh") || "false";
-    if (mesh == "true") {
-      med.mesh = true;
-      document.getElementById("mesh-toggle").checked = true;
-    } else {
-      med.mesh = false;
-      document.getElementById("mesh-toggle").checked = false;
-    }
-    document.getElementById("mesh-toggle").addEventListener("click", e => {
-      med.mesh = e.srcElement.checked;
-    });
-  }
+  // initToggleMesh() {
+  //   const mesh = med.h.getQString(location.href, "mesh") || "false";
+  //   if (mesh == "true") {
+  //     med.mesh = true;
+  //     document.getElementById("mesh-toggle").checked = true;
+  //   } else {
+  //     med.mesh = false;
+  //     document.getElementById("mesh-toggle").checked = false;
+  //   }
+  //   document.getElementById("mesh-toggle").addEventListener("click", e => {
+  //     med.mesh = e.srcElement.checked;
+  //   });
+  // }
 }

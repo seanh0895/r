@@ -28,7 +28,7 @@ function Mediator() {
   // module specific state should be kept in the module (I think?)
   this.DEBUG = true;
   this.TIMEGAP = 6000; //RTC Module?
-  this.mesh = config.mesh;
+  this.mesh = true;
   this.allUsers = []; // needs to live here
   this.enableHacks = config.enableHacks; // @jabis what is this?
   this.meethrix = config.meethrix; // lives here for now, video module?
